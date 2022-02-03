@@ -18,9 +18,7 @@
 <br />
 <p *ngIf="registrado; else sinRegistrar">
   {{ mensaje }} con el nombre de {{ nombre }} {{ apellido }} y tiene el cargo de
-  <span [ngStyle]="{ color: cargo == 'Director' ? 'red' : 'black' }">{{
-    cargo
-  }}</span>
+  <span [ngClass]="{ paraDirectores: cargo == 'Director' }">{{ cargo }}</span>
 </p>
 
 <ng-template #sinRegistrar>
