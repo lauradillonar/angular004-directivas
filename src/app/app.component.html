@@ -1,20 +1,38 @@
-<h1>{{titulo}}</h1>
+<h1>{{ titulo }}</h1>
 
 <form>
-    <input type="text" name="nombre" [(ngModel)]="nombre"><br><br>
-    <input type="text" name="apellido" [(ngModel)]="apellido"><br><br>
-    <input type="submit" value="Registrar" (click)="registrarUsuario()">
+  Nombre <br /><input
+    type="text"
+    name="nombre"
+    [(ngModel)]="nombre"
+  /><br /><br />
+  Apellido <br /><input
+    type="text"
+    name="apellido"
+    [(ngModel)]="apellido"
+  /><br /><br />
+  Cargo <br /><input type="text" name="cargo" [(ngModel)]="cargo" /><br /><br />
+  <input type="submit" value="Registrar" (click)="registrarUsuario()" />
 </form>
 
-<br>
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre de {{nombre}} {{apellido}}</p>
+<br />
+<p *ngIf="registrado; else sinRegistrar">
+  {{ mensaje }} con el nombre de {{ nombre }} {{ apellido }} y tiene el cargo de
+  <span [ngStyle]="{ color: cargo == 'Director' ? 'red' : 'black' }">{{
+    cargo
+  }}</span>
+</p>
 
 <ng-template #sinRegistrar>
-    <p>Nadie registrado</p>
+  <p>Nadie registrado</p>
 </ng-template>
-<br><br>
+<br /><br />
 
 <ul>
-    <li *ngFor="let entrada of entradas; let i=index;"><span style="font-size: larger; font-weight: bold;">{{entrada.titulo}}</span> . Entrada {{i+1}}
-    </li>
+  <li *ngFor="let entrada of entradas; let i = index">
+    <span style="font-size: larger; font-weight: bold">{{
+      entrada.titulo
+    }}</span>
+    . Entrada {{ i + 1 }}
+  </li>
 </ul>
