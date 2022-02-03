@@ -1,7 +1,9 @@
 <h1>{{ titulo }}</h1>
 
 <form>
-    Nombre <br /><input type="text" name="nombre" [(ngModel)]="nombre" /><br /><br /> Apellido <br /><input type="text" name="apellido" [(ngModel)]="apellido" /><br /><br /> Cargo <br /><input type="text" name="cargo" [(ngModel)]="cargo" /><br /><br />
+    Nombre <br /><input type="text" name="nombre" [(ngModel)]="nombre" />
+    <br><br> Apellido <br /><input type="text" name="apellido" [(ngModel)]="apellido" />
+    <br><br> Cargo <br /><input type="text" name="cargo" [(ngModel)]="cargo" /><br /><br />
     <input type="submit" value="Registrar" (click)="registrarUsuario()" />
 </form>
 
